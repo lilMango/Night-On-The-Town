@@ -1,0 +1,20 @@
+<div class="container header-padding"> 
+<h3> Welcome to the about me page</h3>
+
+
+<div ng-repeat="member in team | orderBy : 'rank'">
+	<div class="row" style="padding:20px 0px">
+		<div class="col-md-4">
+			<div style="text-align:center">
+			<img ng-src="{{member.pic}}" alt="Image here" width="165"/>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<p><b ng-bind="member.name"> </b></p>
+			<p><i ng-bind="member.role"></i></p>
+			<p ng-bind="member.blurb"></p>
+		</div>
+	</div>
+</div>
+
+</div>
