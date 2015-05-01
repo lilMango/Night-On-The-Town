@@ -28,20 +28,6 @@ body,html{
     transform: translate(-50%, -50%)
 }
 
-.twentyFivePersonRoom {
-    width:30%;
-    height:40%;
-}
-
-.tenPersonRoom  {
-    width:20%;
-    height:20%;
-}
-
-.fourPersonRoom {
-
-}
-
-.roomTaken {
-  background-color: firebrick;
+.text-center {
+    text-align:center;
 }

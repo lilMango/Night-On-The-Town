@@ -32,9 +32,13 @@ angular.module('nightrouletteApp', [
 
 }])
 
+/*
 .controller ('MainCtrl', ['$scope', 'staticFactory', function ($scope, staticFactory) {
-	$scope.team = staticFactory.team;
-	$scope.slides = staticFactory.slides;
+    $scope.team = staticFactory.team;
+    $scope.slides = staticFactory.slides;
+}])*/
+.controller ('MainCtrl', ['$scope', function ($scope) {
+
 }])
 
 ;
