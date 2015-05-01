@@ -21,6 +21,11 @@ angular.module('nightrouletteApp', [
      	templateUrl : 'partials/services.html',
      	controller : 'MainCtrl'
      })
+     .state('suggestions', {
+        url : '/suggestions',
+        templateUrl : 'partials/suggestions.html',
+        controller : 'MainCtrl'
+     })
      .state('about', {
      	url : '/about',
      	templateUrl : 'partials/about.html',
@@ -37,8 +42,11 @@ angular.module('nightrouletteApp', [
     $scope.team = staticFactory.team;
     $scope.slides = staticFactory.slides;
 }])*/
-.controller ('MainCtrl', ['$scope', function ($scope) {
-
+.controller ('MainCtrl', ['$scope', '$state', function ($scope, $state) {
+    
+    $scope.suggestions = function () {
+        $state.go('suggestions');    
+    }
 }])
 
 ;
