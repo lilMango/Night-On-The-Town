@@ -68,37 +68,72 @@ angular.module('nightrouletteApp', [
 
     var r0 = {
         'name' : 'Incahoots',
-        'img' : 'http://clubworld360.com/data/venues/1442/full_InCahoots%20-%20Copy.jpg'
+        'img' : 'http://clubworld360.com/data/venues/1442/full_InCahoots%20-%20Copy.jpg',
+        'tagline' : 'Yeehaw country line dancing!',
+        'crowdRating': 7,
+        'reviews' : ["Awesome", "hot white chicks"],
+        'attending' : ["Billy", "Samantha", "Amanda", "Yolanda"],
+        'tipsAndTricks': ['Line dancing lessons at 6:30 daily']
     };
 
     var r1 = {
         'name' : 'Tavern',
-        'img' : 'https://bakaresd.files.wordpress.com/2010/02/tavern1.jpg'
+        'img' : 'https://bakaresd.files.wordpress.com/2010/02/tavern1.jpg',
+        'tagline' : 'Downtown SD at PB',
+        'crowdRating': 8,
+        'reviews' : ["Awesome", "hot white chicks"],
+        'attending' : ["Billy", "Samantha", "Amanda", "Yolanda"],
+        'tipsAndTricks': ['Cover is $5', 'always crowded']        
     };
 
     var r2 = {
         'name' : 'McDonalds',
-        'img' : 'http://www.burgerbusiness.com/wp-content/uploads/McD_LovinIt.png'
+        'img' : 'http://www.burgerbusiness.com/wp-content/uploads/McD_LovinIt.png',
+        'tagline' : 'This aint no Buuurger Kiing',
+        'crowdRating': 2,
+        'reviews' : ["Awesome", "hot white chicks"],
+        'attending' : ["Billy", "Samantha", "Amanda", "Yolanda"],
+        'tipsAndTricks': ['Dollar Menu']        
     };
     
     var r3 = {
-        'name' : 'Bowling',
-        'img' : 'http://1.bp.blogspot.com/-2QBgwLy97U4/U8O1qlCVbKI/AAAAAAAAAas/sxb_QRb1efo/s1600/strike_400_wht_7927.png'
+        'name' : 'Mira Mesa Bowling Lanes',
+        'img' : 'http://1.bp.blogspot.com/-2QBgwLy97U4/U8O1qlCVbKI/AAAAAAAAAas/sxb_QRb1efo/s1600/strike_400_wht_7927.png',
+        'tagline' : 'Get a 300, just like Mark Herrero',
+        'crowdRating': 5,
+        'reviews' : ["games", "perfect high school date", "hot moms"],
+        'attending' : ["Billy", "Samantha", "Amanda", "Yolanda"],
+        'tipsAndTricks': ['Half off games on Tuesdays']
     }; 
 
     var r4 = {
         'name' : 'Surfing',
-        'img' : 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRUHOXTjRq50CC8PbJ8t2w3lUOF9_-LsULBJSmvbc-vH6sE7jrx4TIZhB7i'
+        'img' : 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRUHOXTjRq50CC8PbJ8t2w3lUOF9_-LsULBJSmvbc-vH6sE7jrx4TIZhB7i',
+        'tagline' : 'Cowa bunga',
+        'crowdRating': 4,
+        'reviews' : ["tubular", "hot white chicks"],
+        'attending' : [ "Craig","Samantha", "Amanda"],
+        'tipsAndTricks': ['Waves are best after it rains', 'Go at 11am']        
     }; 
 
     var r5 = {
         'name' : 'Brewskis',
-        'img' : 'http://www.brewskissd.com/images/brewskis.png'
+        'img' : 'http://www.brewskissd.com/images/brewskis.png',
+        'tagline' : 'Free arcade games, cheap dances at Goldfingers',
+        'crowdRating': 6,
+        'reviews' : ["Waitresses in bikinis, dancers in not","hot white chicks"],
+        'attending' : ["Bob"],
+        'tipsAndTricks': ['Show your receipt from Brewskis for cheap admission at Goldfingers']        
     }; 
 
     var r6 = {
         'name' : 'PB shore club',
-        'img' : 'http://www.sandiegan.com/images/Restaurants/pbshoreclub.jpg'
+        'img' : 'http://www.sandiegan.com/images/Restaurants/pbshoreclub.jpg',
+        'tagline' : 'Red bull Vodka slushis RBVs',
+        'crowdRating': 4,
+        'reviews' : ["I love their vodka slushis..YUM", "hot white chicks"],
+        'attending' : ["Billy", "Samantha", "Amanda", "Yolanda"],
+        'tipsAndTricks': ['show up before 10pm to beat line']        
     }; 
 var placeArr = [];
 placeArr.push(r0);
