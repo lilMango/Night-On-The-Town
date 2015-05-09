@@ -22,7 +22,7 @@ angular.module('nightrouletteApp', [
      	controller : 'MainCtrl'
      })
      .state('suggestions', {
-        url : '/suggestions?mood&price&drinks&transportation&partysize&proximity',
+        url : '/suggestions?mood&price&drinks&transportation&partysize&proximity&cursor?ch0?ch1?ch2',
         templateUrl : 'partials/suggestions.html',
         controller : 'SuggestionCtrl'
      })
@@ -32,7 +32,7 @@ angular.module('nightrouletteApp', [
      	controller : 'MainCtrl'
      })
      .state('place', {
-        url : '/place/:id',
+        url : '/place/:id?cursor?ch0?ch1?ch2',
         templateUrl : 'partials/placedetails.html',
         controller : 'PlacesCtrl'
      })
@@ -170,27 +170,104 @@ res['places'] = placeArr;
     var partysize = parseInt($stateParams['partysize']);
     var proximity = parseInt($stateParams['proximity']);
 
+    var cursor = $stateParams['cursor'];
+    var ch0 = $stateParams['ch0'];
+    var ch1 = $stateParams['ch1'];
+    var ch2 = $stateParams['ch2'];
+
+
     total = mood + price + drinks + transportation + partysize + proximity;
 
+    var places = [];
+
     if(total>26) {
-        $scope.places = placeFactory['places'].slice(0,3);
+        places = placeFactory['places'].slice(0,3);        
     } else {
-        $scope.places = placeFactory['places'].slice(3,6);
+        places = placeFactory['places'].slice(3,6);
+    }
+    
+
+    if(ch0==='true') {
+        places[0]['visited'] = 'true';
+    }else {
+        places[0]['visited'] = 'false';
+        ch0 = 'false';
+    }
+    if(ch1==='true') {
+        places[1]['visited'] = 'true';
+    }else {
+        places[1]['visited'] = 'false';
+        ch1 = 'false';
+    }
+    if(ch2==='true') {
+        places[2]['visited'] = 'true';
+    }else {
+        places[2]['visited'] = 'false';
+        ch2='false';
     }
 
-    $scope.getPlaceDetails = function (id) {
-        $state.go('place', {'id':id});
+
+    if(cursor === '0') {
+        places[0]['visited']='true';
+        ch0='true';
     }
-    console.log(total);
+    if(cursor === '1') {
+        places[1]['visited']='true';
+        ch1='true';
+    }
+    if(cursor === '2') {
+        places[2]['visited']='true';
+        ch2='true';
+    }
+
+
+    console.log('cursor: '+cursor);
+
+    places[0]['c'] = 0;
+    places[1]['c'] = 1;
+    places[2]['c'] = 2;
+
+    $scope.places = places;
+    $scope.ch0 = ch0;
+    $scope.ch1 = ch1;
+    $scope.ch2 = ch2;
+
+    $scope.getPlaceDetails = function (id, cursor, ch0,ch1,ch2) {
+        $state.go('place', {'id':id, 'cursor':cursor, 'ch0':ch0, 'ch1':ch1, 'ch2':ch2} );
+    }
+
+    if (ch1 ==='true' && ch1==='true' && ch2==='true') {
+        $scope.allseen = true;
+    }
+
  }])
 
 
 .controller('PlacesCtrl', ['$scope', '$state', '$stateParams', 'PlaceFactory',function ($scope, $state, $stateParams, placeFactory) {
     var placeId = $stateParams['id'];
+    var cursor = $stateParams['cursor'];
+    var ch0 = $stateParams['ch0'];
+    var ch1 = $stateParams['ch1'];
+    var ch2 = $stateParams['ch2'];
+
+    $scope.cursor = cursor;
+    $scope.ch0 = ch0;
+    $scope.ch1 = ch1;
+    $scope.ch2 = ch2;
+
     $scope.place = $.grep(placeFactory['places'], function(e){ return e.id == placeId; })[0];
 
     $scope.toggleViews = function (elem) {
         $(elem).toggleClass('hide');
+    }
+    $scope.showRemaining = function (cursor, ch0, ch1, ch2) {
+            $state.go('suggestions', {
+                'cursor': cursor,
+                'ch0': ch0,
+                'ch1': ch1,
+                'ch2': ch2
+            }
+            );   
     }
  }])
 
