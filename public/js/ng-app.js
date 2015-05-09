@@ -36,6 +36,16 @@ angular.module('nightrouletteApp', [
         templateUrl : 'partials/placedetails.html',
         controller : 'PlacesCtrl'
      })
+    .state('sorry', {
+        url : '/sorry',
+        templateUrl : 'partials/sorry.html',
+        controller : 'SorryCtrl'
+    })
+    .state('letsgo', {
+        url : '/letsgo?id',
+        templateUrl : 'partials/letsgo.html',
+        controller : 'LetsGoCtrl'
+    })
 	;
 
      $urlRouterProvider.otherwise ('/');
@@ -240,6 +250,10 @@ res['places'] = placeArr;
         $scope.allseen = true;
     }
 
+    $scope.sorryPage = function () {
+        $state.go('sorry');
+    }
+
  }])
 
 
@@ -269,6 +283,23 @@ res['places'] = placeArr;
             }
             );   
     }
+
+    $scope.gotoLetsgo = function(id) {
+        $state.go('letsgo', {
+            'id':id
+        })
+    }
  }])
+
+.controller('SorryCtrl', ['$scope', '$state', '$stateParams', 'PlaceFactory',function ($scope, $state, $stateParams, placeFactory) {
+
+}])
+
+.controller('LetsGoCtrl', ['$scope', '$state', '$stateParams', 'PlaceFactory',function ($scope, $state, $stateParams, placeFactory) {
+    var placeId = $stateParams['id'];
+    $scope.place = $.grep(placeFactory['places'], function(e){ return e.id == placeId; })[0];
+
+}])
+
 
 ;
