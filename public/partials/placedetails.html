@@ -1,0 +1,63 @@
+    <div class="row text-center" style="margin-left:auto; margin-right:auto; max-width:960px">
+      <div class="col-md-4" >
+        <div>
+          <h2>{{place.name}}</h2>
+         
+        </div>
+      </div>
+    </div><!--row-->
+
+    <div class="row text-center" style="margin-left:auto; margin-right:auto; max-width:960px">
+      <div class="col-md-4" >
+        <div>
+          <img ng-src="{{place.img}}" alt="no image!" width="165" height="165" ng-click="getPlaceDetails(place.id)"></img>
+        
+        </div>
+      </div>
+    </div><!--row-->
+
+    <div class="row text-center" style="margin-left:auto; margin-right:auto; max-width:960px">
+      <div class="col-md-4" >
+        <div>
+          <em><h2>{{place.tagline}}</h2></em>
+         
+        </div>
+      </div>
+    </div><!--row-->
+
+
+    <div class="row text-center" style="margin-left:auto; margin-right:auto; max-width:960px">
+      <div class="col-md-4" >
+        <div>
+          <p>Crowd Rating: {{place.crowdRating}}/10 </p>	
+         
+        </div>
+      </div>
+    </div><!--row--> 
+
+    <div class="row text-center" style="margin-left:auto; margin-right:auto; max-width:960px">
+      <div class="col-md-4" >
+        <div>
+          <strong><p ng-click="toggleViews('#reviews-array')">Reviews +</p></strong>
+          <ul class="hide" id="reviews-array">
+          	<li ng-repeat="review in place.reviews">{{review}}</li>
+          </ul>		
+        </div>
+      </div>
+      <div class="col-md-4" >
+        <div>
+          <strong><p ng-click="toggleViews('#attending-array')">Attending +</p></strong>	
+          <ul class="hide" id="attending-array">
+          	<li ng-repeat="attendee in place.attending">{{attendee}}</li>
+          </ul>		
+        </div>
+      </div>
+      <div class="col-md-4" >
+        <div>
+          <strong><p ng-click="toggleViews('#tipsAndTricks-array')">Tips and Tricks +</p></strong>	
+          <ul class="hide" id="tipsAndTricks-array">
+          	<li ng-repeat="tnt in place.tipsAndTricks">{{tnt}}</li>
+          </ul>		
+        </div>
+      </div>      
+    </div><!--row-->           

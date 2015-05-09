@@ -8,7 +8,7 @@
       <div class="col-md-4" ng-repeat= "place in places">
         <div>
           <h4>{{place.name}}</h4>
-          <img ng-src="{{place.img}}" alt="no image!" width="165" height="165"></img>
+          <img ng-src="{{place.img}}" alt="no image!" width="165" height="165" ng-click="getPlaceDetails(place.id)"></img>
         
         </div>
       </div>
