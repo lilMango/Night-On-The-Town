@@ -3,6 +3,9 @@ body,html{
     /*background-color:green;*/
 }
 
+.main {
+    padding:50px 10px;
+}
 .building {
     display:table;
     width:99%;
