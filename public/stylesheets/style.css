@@ -1,16 +1,53 @@
+@THEME-DARK-BLUE : #00004c;
+@THEME-FONT-WHITE : #b2b2b2;
+
 body,html{
     /*height:100%;*/
-    /*background-color:green;*/
+    background-color: #00004c;
+    color:#b2b2b2;
 }
 
+.interactive-content {
+
+    border: 1px #b2b2b2 solid;
+    border-radius:25px;
+    color:#b2b2b2;
+}
 .main {
     padding:50px 10px;
 }
+h1 {
+    font:50px "Helvetica Neue","Open Sans",sans-serif;
+    font-weight:100;
+    padding: 10px 0px;
+    color: #b2b2b2;
+    text-align: center
+}
+.navbar-header {
+    background-color: #00004c;
+}
+.navbar-default {
+    background-color: #00004c;
+    border-color: #00004c;
+}
+
 
 #logo {
     font:25px "Helvetica Neue","Open Sans",sans-serif;
     font-weight:100;
     padding: 10px 0px;
+    color:#b2b2b2;
+}
+
+.btn {
+    min-width:30px;
+    width:100%;
+    margin:25px 0px;
+    border-radius:10px;
+    height:50px;
+    background-color : #00004c;
+    border : 1px #b2b2b2 solid;
+    font-size:20px;
 }
 .text-center {
     text-align:center;
