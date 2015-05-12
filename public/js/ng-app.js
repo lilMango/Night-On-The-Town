@@ -6,6 +6,7 @@ angular.module('nightrouletteApp', [
   'ui.router',
   'ui.bootstrap',
   'nightrouletteApp.landingpage',
+  '720kb.socialshare'
 ])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
