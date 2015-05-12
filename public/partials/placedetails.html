@@ -1,7 +1,7 @@
     <div class="row text-center" style="margin-left:auto; margin-right:auto; max-width:960px">
       <div class="col-md-4" >
         <div>
-          <h2>{{place.name}}</h2>
+          <h1>{{place.name}}</h1>
          
         </div>
       </div>
@@ -64,7 +64,7 @@
 
     <div class="row text-center" style="margin-left:auto; margin-right:auto; max-width:960px">
       <div class="col-md-6" >
-		<button ng-click="showRemaining(cursor,ch0,ch1,ch2)">Pass</button>
-		<button ng-click="gotoLetsgo(place.id)">Let's go</button>
+		<button class="btn-neg" ng-click="showRemaining(cursor,ch0,ch1,ch2)">Pass</button>
+		<button class="btn-pos" ng-click="gotoLetsgo(place.id)">Let's go</button>
       </div>     
     </div><!--row-->               
