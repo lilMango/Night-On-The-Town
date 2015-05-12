@@ -85,3 +85,16 @@ li {
 .seen {
     opacity: 0.3;
 }
+
+.mini-btn {
+    border-radius:7px;
+    background-color: #00004c;
+    color:#b2b2b2;
+    border:1px solid;
+}
+
+.mini-btn-select {
+    background-color: #b2b2b2;
+    color: #00004c;
+}
+

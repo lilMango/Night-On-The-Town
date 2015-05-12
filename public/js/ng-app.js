@@ -292,7 +292,17 @@ res['places'] = placeArr;
  }])
 
 .controller('SorryCtrl', ['$scope', '$state', '$stateParams', 'PlaceFactory',function ($scope, $state, $stateParams, placeFactory) {
+    $scope.toggleSelect = function ($event) {
+        var elem=$event.target;
 
+        console.log("inside toggleSelect");
+        console.log(elem);
+        $(elem).toggleClass("mini-btn-select");
+    }
+
+    $scope.backToStart = function () {
+        $state.go("home");
+    }
 }])
 
 .controller('LetsGoCtrl', ['$scope', '$state', '$stateParams', 'PlaceFactory',function ($scope, $state, $stateParams, placeFactory) {
